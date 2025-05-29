@@ -4,7 +4,6 @@ import { ArrowLeft, Heart, Users, MapPin, Share2, Calendar } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import MobileNav from "@/components/mobile-nav"
-import { use } from "react"
 
 // 모임 상세 데이터 (실제로는 API나 데이터베이스에서 가져옴)
 const groupsData = [
@@ -82,9 +81,8 @@ const groupsData = [
   },
 ]
 
-export default function GroupDetailPage({ params }: { params: Promise<{ id: string }> }) {
-  const resolvedParams = use(params)
-  const groupId = Number.parseInt(resolvedParams.id)
+export default function GroupDetailPage({ params }: { params: { id: string } }) {
+  const groupId = Number.parseInt(params.id)
   const group = groupsData.find((g) => g.id === groupId) || groupsData[0]
 
   return (
