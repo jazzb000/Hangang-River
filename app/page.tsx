@@ -22,6 +22,7 @@ import WeatherWidget from "@/components/weather-widget"
 import PopularityMap from "@/components/popularity-map"
 import MobileNav from "@/components/mobile-nav"
 import LocationSelector from "@/components/location-selector"
+import AICourseRecommendation from "@/components/ai-course-recommendation"
 
 export default function Home() {
   return (
@@ -129,6 +130,9 @@ export default function Home() {
               </Link>
             </div>
           </section>
+
+          {/* AI 코스 추천 섹션 */}
+          <AICourseRecommendation />
 
           {/* 오늘의 모임 섹션 */}
           <section className="mb-4">
